@@ -1,0 +1,59 @@
+h4:hover, h4:focus { 
+    animation-duration: 3s; 
+    animation-name: rainbowLink; 
+    animation-iteration-count: infinite; 
+} 
+
+@keyframes rainbowLink {     
+    0% { color: #ff2a2a; }
+    15% { color: #ff7a2a; }
+    30% { color: #ffc52a; }
+    45% { color: #7ae91f; }
+    60% { color: #2a89ff; }
+    75% { color: #202082; }
+    90% { color: #7440ee; } 
+   100% { color: #ff66c4; }
+}
+
+div.topButton{
+    position: fixed; bottom: 50px; right: 50px;
+}
+
+/* mouse hover -> text effect*/
+@font-face {
+    src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2")
+      format("woff2");
+    font-family: "Meta";
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+   body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  h1#javaScriptAnimation {
+    transition: all 0.5s;
+    -webkit-text-stroke: 4px #d6f4f4;
+    font-variation-settings: "wght" 900, "ital" 1;
+    font-size: 8rem;
+    text-align: center;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 10px 10px 0px #07bccc,
+      15px 15px 0px #e601c0,
+      20px 20px 0px #e9019a,
+      25px 25px 0px #f40468,
+      45px 45px 10px #482896;
+    cursor: pointer;
+  }
+  
+  h1#javaScriptAnimation:hover {
+    font-variation-settings: "wght" 100, "ital" 0;
+    text-shadow: 5px 5px 0px #09aebd;
+  }

@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>자바스크립트 기초문법</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/animation.css">
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>Jiyun</strong> Javascript</a>
+									
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>자바스크립트 기초문법</h1>
+									</header>
+
+									<h2><a name="grammar">기초문법</a></h2>
+									
+									<h4>1. 자바스크립트 선언문</h4>
+
+									<h4> - 내부선언 방식</h4>
+									<h4>html파일의 &lt;head&gt;태그 또는 &lt;body&gt;태그영역에 선언할 수 있습니다.</h4>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=%253Cscript%253E%250A%2509document.write%28%27%25ED%2599%2598%25EC%2598%2581%25ED%2595%25A9%25EB%258B%2588%25EB%258B%25A4%25F0%259F%2591%258D%27%29%253B%250A%2509console.log%28%27%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8%2520%25EB%25B0%25B0%25EC%259B%258C%25EC%259A%2594%21%25F0%259F%2599%258C%25F0%259F%2599%258C%27%29%253B%250A%253C%252Fscript%253E"
+										style="width: 430px; height: 180px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<h4> - 내부스크립트 외부로 분리하기</h4>
+									<p>src를 통해서 경로를 지정하여 자바스크립트 파일을 불러올 수 있습니다.</p>
+									<p>👀분리를 하면 다른 개발자에 의해 소스가 손상될일이 없습니다!(보안문제🧨)</p>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=%253Cscript%2520src%253D%2522%25EC%259E%2590%25EB%25B0%2594%25EC%258A%25A4%25ED%2581%25AC%25EB%25A6%25BD%25ED%258A%25B8%2520%25ED%258C%258C%25EC%259D%25BC%2520%25EA%25B2%25BD%25EB%25A1%259C%2522%253E%253C%252Fscript%253E"
+										style="width: 430px; height: 130px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=document.write%28%27%25EC%259D%25B4%25EC%25A0%259C%2520%25EB%25B6%2584%25EB%25A6%25AC%2520%25EB%2590%2590%25EC%258A%25B5%25EB%258B%2588%25EB%258B%25A4%25F0%259F%2598%2581%27%29%253B"
+										style="width: 430px; height: 130px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<strong>코드 입력 시 주의할점!</strong>
+									<p>1) 대소문자를 구분하여 작성해야합니다.<br>2) 한줄 작성하고 세미콜론(;)으로 마무리 해야합니다.(2개의 코드를 연속으로 작성 시 구분하기가 어려워짐)<br>3) 큰따옴표("")와 작은따옴표('')의 겹침 오류를 주의해야합니다.<br>4) 코드를 작성할때 중괄호{}또는 소괄호()의 짝이 맞아야 합니다.</p>
+									<strong>ES6에 생긴 템플릿 리터럴(Template Literal)!</strong>
+									<p>문자열 생성시 따옴표가 아닌 백틱(`)으로 표현할 수 있습니다.<br>1. 줄바꿈을 나타낼 수 있습니다.<br> ${ }으로 표현식을 삽입할 수 있습니다.</p>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=const%2520sayHello%2520%253D%2520%2560%2520Hi%21%2520%250AIt%27s%2520me%21%2520%250A%2509%2509JavaScript%21%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509It%27s%2520fun%21%2560%253B"
+										style="width: 260px; height: 174px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=const%2520canRead%2520%253D%2520true%253B%250Aconst%2520test%2520%253D%25203%2520%253C%25201%253B%2520%252F%252Ffalse%250Aconsole.log%28%2560value%2520%253A%2520%2524%257BcanRead%257D%252C%2520type%253A%2520%2524%257Btypeof%2520canRead%257D%2560%29%253B%250Aconsole.log%28%2560value%2520%253A%2520%2524%257Btest%257D%252C%2520type%253A%2520%2524%257Btypeof%2520test%257D%2560%29%253B"
+										style="width: 550px; height: 180px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<h4>2. 자바스크립트의 입출력</h4>
+									<h5>입출력 방식을 눌러보면 확인할 수 있어요!</h5>
+									<span class="showOutput" id="documentWrite"><h4>- document.write()</h4></span>
+									<div class="showResult"></div>
+									<span class="showOutput" id="consoleLog"><h4>- console.log()</h4></span>
+									<span class="showOutput" id="promptShow"><h4>- prompt()</h4></span>
+
+									<hr class="major" />
+
+									<h2><a name="variable">변수(Variable)</a></h2>
+									<h4>1. "use strict";</h4>
+									<p>ECMAScript5에서 처음 소개된 strict 모드는 변수 선언을 해주지 않아도 값이 할당되는것을 방지합니다. 과거의 자바스크립트에서는 let 또는 var 없이도 값을 할당하는것만으로도 변수를 선언하는것이 가능했습니다. 이러한 동작은 과거의 스크립트와의 호환성을 위한 모습입니다.</p>
+									<p>선언 방법은 <strong>스크립트에서 최상단에서 선언</strong>하는 방법과 <strong>함수에서 선언</strong>하는 방법이 있습니다.</p>
+									<strong>주의할점!</strong>
+									<p>1) 최상단에 위치해야합니다.<br>2) 취소할 수 없습니다.<br>3) 8진수 구문을 금지합니다.<br>4) with를 사용하지 못하게 합니다.<br>5) eval은 새로운 변수를 주위 스코프에 추가하지 않습니다.<br>또한 보안된 자바스크립트를 작성하기 위하여 6) window객체를 this를 통해 참조할 수 없습니다.</p>
+									<p>최신웹사이트는 다양한 스크립트를 불러와서 사용하므로 전역 스코프에서 strict 모드를 <strong>사용하지 않는 편</strong>이 좋습니다.</p>
+
+									<h4>2. 변수에 저장할 수 있는 자료형</h4>
+									<p>문자형, 숫자형, 논리형, null & undefined<br><br>typeof : 지정한 데이터 또는 변수에 저장된 자료형을 알고 싶을때 사용합니다.</p>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=%253Cscript%253E%250A%2509var%2520num%2520%253D%2520100%253B%250A%2520%2520%2520%2520var%2520str%2520%253D%2520%2522%25EC%259E%2590%25EB%25B0%2594%25EC%259E%2590%25EB%25B0%2594%25EC%259E%2590%25EB%25B0%2594%25EC%259E%2590%25EB%25B0%2594%25F0%259F%2598%25B5%2522%253B%250A%2520%2520%2520%2520%250A%2520%2520%2520%2520console.log%28typeof%2520num%29%253B%2520%252F%252Fnumber%250A%2509console.log%28typeof%2520str%29%253B%2520%252F%252Fstring%250A%253C%252Fscript%253E"
+										style="width: 430px; height: 214px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+
+									<h4>3. 변수 선언방법</h4>
+									<h4>- 변수명</h4>
+									<h4>CamelCase</h4>
+									<p>"_없이 이름을 대소문자로 구분하여 긴 변수명을 짓는 방식"<br>(파이썬에서는 Snake_case로 씀)</p>
+									<h4>- let</h4>
+									<p>"can change"<br>값을 업데이트 하고 싶은 변수에 사용합니다.<br>다시 선언하지 않아도 변수에 값을 재할당 할 수 있습니다.</p>
+									<div class="textFrame"><iframe
+										src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=0px&ph=0px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=let%2520globalName%2520%253D%2520%27globale%2520name%27%253B%250A%257B%250A%2520%2520%2520%2520let%2520name%2520%253D%2520%27jiyun%27%253B%250A%2520%2520%2520%2520console.log%28name%29%253B%250A%2520%2520%2520%2520name%2520%253D%2520%27hello%27%253B%250A%2520%2520%2520%2520console.log%28globalName%29%253B%250A%257D%250Aconsole.log%28globalName%29%253B%250Aconsole.log%28name%29%253B"
+										style="width: 430px; height: 254px; border:0; transform: scale(1); overflow:hidden;"
+										sandbox="allow-scripts allow-same-origin">
+									</iframe></div>
+									<h4>- const</h4>
+									<p>"cannot change"<br>변수의 재선언,재할당이 모두 불가능합니다. 이 말은 오직 읽을수만 있는 변수 선언입니다.<br>많은 개발자들이 const를 사용합니다.</p>
+									<h4>- var</h4>
+									<p>"block scope가 아니다"<br><strong>Hoisting(호이스팅)</strong>,해당 스코프의 선두로 옮긴것 처럼 동작합니다.<br><strong>같은 변수명으로 재선언 해주었는데</strong>에러가 생기지 않고 다른값이 출력되었습니다.<br>var 선언방식은 값을 보호할 수 없기 때문에 사용을 지양해야합니다.</p>
+									<p>=> immutable variable은 security, thread safty, reduce human mistakes에 장점이 있습니다.</p>
+
+
+									<hr class="major" />
+									
+									<h2><a name="operator">연산자</a></h2>
+									<h4>1. 산술연산자</h4>
+									<table style="width: 50%;">
+										<tr>
+											<td>종류</td>
+											<td>기본형</td>
+											<td>설명</td>
+										</tr>
+										<tr>
+											<td>+</td>
+											<td>A+B</td>
+											<td>더하기</td>
+										</tr>
+										<tr>
+											<td>-</td>
+											<td>A-B</td>
+											<td>빼기</td>
+										</tr>
+										<tr>
+											<td>*</td>
+											<td>A*B</td>
+											<td>곱하기</td>
+										</tr>
+										<tr>
+											<td>/</td>
+											<td>A/B</td>
+											<td>나누기</td>
+										</tr>
+										<tr>
+											<td>%</td>
+											<td>A%B</td>
+											<td>나머지</td>
+										</tr>
+									</table>
+									<h4>2. 연산의 이용</h4>
+									<p>문자형 데이터 + 문자형 데이터 = 하나의 문자형 데이터 <br>문자형 데이터 + 숫자형 데이터 = 하나의 문자형 데이터</p>
+									<h4>3. 대입 연산자</h4>
+									<table style="width: 50%;">
+										<tr>
+											<td>종류</td>
+											<td>풀이</td>
+										</tr>
+										<tr>
+											<td>A = B</td>
+											<td>A = B</td>
+										</tr>
+										<tr>
+											<td>A += B</td>
+											<td>A = A + B</td>
+										</tr>
+										<tr>
+											<td>A *= B</td>
+											<td>A = A * B</td>
+										</tr>
+										<tr>
+											<td>A /= B</td>
+											<td>A = A / B</td>
+										</tr>
+										<tr>
+											<td>A %= B</td>
+											<td>A = A % B</td>
+										</tr>
+									</table>
+
+									<h4>4. 증감 연산자</h4>
+									<table style="width: 50%;">
+										<tr>
+											<td>1) 증가된 B의 값을 A에 대입</td>
+										</tr>
+										<tr>
+											<td>var A = ++B;</td>
+										</tr>
+										<tr>
+											<td>2) B의 값을 A에 대입한것이 실행되고 B의 값을 1만큼 증가</td>
+										</tr>
+										<tr>
+											<td>var A = B++;</td>
+										</tr>
+									</table>
+
+									<h4>5. 비교 연산자</h4>
+									<table style="width: 80%;">
+										<tr>
+											<td>종류</td>
+											<td>설명</td>
+											<td>비고</td>
+										</tr>
+										<tr>
+											<td>A > B</td>
+											<td>A가 B보다 크다</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>A < B</td>
+											<td>A가 B보다 작다</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>A >= B</td>
+											<td>A가 B보다 크거나 같다</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>A <= B</td>
+											<td>A가 B보다 작거나 같다</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>A == B</td>
+											<td>A와 B는 같다</td>
+											<td>자료형이 달라도 표기된 숫자가 같은 경우 true를 반환</td>
+										</tr>
+										<tr>
+											<td>A != B</td>
+											<td>A와 B는 다르다</td>
+											<td>자료형이 달라도 표기된 숫자가 같은 경우 false를 반환</td>
+										</tr>
+										<tr>
+											<td>A === B</td>
+											<td>A와 B는 같다</td>
+											<td>표기된 숫자와 자료형이 일치해야만 true를 반환</td>
+										</tr>
+										<tr>
+											<td>A !== B</td>
+											<td>A와 B는 다르다</td>
+											<td>표기된 숫자와 자료형이 일치하는 경우 false를 반환</td>
+										</tr>
+									</table>
+									<h4>6. 논리 연산자</h4>
+									<table style="width: 80%;">
+										<tr>
+											<td>종류</td>
+											<td>설명</td>
+										</tr>
+										<tr>
+											<td>||</td>
+											<td>or 연산자라 부르며, 피연산자 중 값이 하나라도 true가 존재하면 true로 결과값을 반환</td>
+										</tr>
+										<tr>
+											<td>&&</td>
+											<td>and 연산자라 부르며, 피연산자 중 값이 하나라도 false가 존재하면 flase로 결과값을 반환</td>
+										</tr>
+										<tr>
+											<td>!</td>
+											<td>not 연산자라 부르며, 단항 연산자. 피연산자의 값이 true이면 반대로 false로 결과값을 반환</td>
+										</tr>
+									</table>
+
+									<h4>7. 연산자 우선순위</h4>
+									<p>1. ( )<br>2.단항 연산자<br>3. 산술연산자<br>4. 비교연산자<br>5. 논리연산자<br>6. 대입(복합대입)연산자</p>
+									
+
+									<hr class="major" />
+									<h4>빠르게 이동하기</h4>
+									<p><a href="#grammar">기초문법</a>&nbsp;&nbsp;<a href="#variable">변수</a>&nbsp;&nbsp;<a href="#operator">연산자</a></p>
+									<div class="topButton" id="topButton"><a href="#header"><i class="fas fa-arrow-up"></i></a></div>
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+					<div class="inner">
+
+						<!-- Search -->
+							<section id="search" class="alt">
+								<form method="post" action="#">
+									<input type="text" name="query" id="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Menu -->
+							<nav id="menu">
+								<header class="major">
+									<h2>메뉴</h2>
+								</header>
+								<ul>
+									<li><a href="../index.html">메인</a></li>
+									<li>
+										<span class="opener">기초문법</span>
+										<ul>
+											<li><a href="#">기초문법</a></li>
+											<li><a href="#">변수</a></li>
+											<li><a href="#">연산자</a></li>
+										</ul>
+									</li>
+									<li>
+										<span class="opener">제어문</span>
+										<ul>
+											<li><a href="#">조건문</a></li>
+											<li><a href="#">선택문</a></li>
+											<li><a href="#">반복문</a></li>
+										</ul>
+									</li>
+									<li><a href="generic.html">객체</a></li>
+									<li><a href="elements.html">함수</a></li>
+									<li>
+										<span class="opener">제이쿼리</span>
+										<ul>
+											<li><a href="#">객체 선택자와 조작법</a></li>
+											<li><a href="#">제이쿼리 이벤트</a></li>
+											<li><a href="#">효과와 애니메이션</a></li>
+											<li><a href="#">비동기 방식 연동</a></li>
+											<li><a href="#">제이쿼리 플러그인</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>퀵 메뉴</h2>
+								</header>
+								<div class="mini-posts">
+									<article>
+										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+										<p>자바스크립트 기초 문법</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+										<p>제이쿼리</p>
+									</article>
+									<article>
+										<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+										<p>마무으리</p>
+									</article>
+								</div>
+							</section>
+
+						<!-- Section -->
+							<section>
+								<header class="major">
+									<h2>만든 이</h2>
+								</header>
+								<p>스마트 인재 개발원<br>혁신 계속 빅데이터 과정 2차<br>오지윤</p>
+								<ul class="contact">
+									<li class="icon solid fa-envelope">heyouise66@gmail.com</li>
+									<li class="icon solid fa-phone">010-1234-5678</li>
+									<li class="icon solid fa-home">스마트 인재개발원</li>
+								</ul>
+							</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/newfunction.js"></script>
+
+	</body>
+</html>
