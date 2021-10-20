@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+        integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="chartArt.css">
+    <title>this is chart</title>
+</head>
+
+<body>
+    <h1>자바스크립트의</h1>
+    <h2>차트 라이브러리 Chart.js</h2>
+    <div class="selectType">
+        <button type="button" class="typeButton" value="line">Line</button>
+        <button type="button" class="typeButton" value="bar">Bar</button>
+        <button type="button" class="typeButton" value="radar">Radar</button>
+        <button type="button" class="typeButton" value="doughnut">Doughnut</button>
+        <button type="button" class="typeButton" value="pie">Pie</button>
+        <button type="button" class="typeButton" value="polarArea">PolarArea</button>
+        <button type="button" class="typeButton" value="bubble">Bubble</button>
+        <button type="button" class="typeButton" value="scatter">Scatter</button>
+        <button type="button" class="typeButton" value="mixed">Mixed</button>
+        
+    </div>
+    <hr class="divideLine">
+    <div class="chartArea" id="chartDiv">
+        <canvas id="myChart"></canvas>
+    </div>
+    <!-- <div class="chartDescribe">
+        <h3>1. 차트 라이브러리 설치</h3>
+        <div class="textIframe">
+            <iframe
+            src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=%253Cscript%2520src%253D%2522https%253A%252F%252Fcdnjs.cloudflare.com%252Fajax%252Flibs%252FChart.js%252F3.5.1%252Fchart.min.js%2522%2520integrity%253D%2522sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk%252FO5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q%253D%253D%2522%2520crossorigin%253D%2522anonymous%2522%2520referrerpolicy%253D%2522no-referrer%2522%253E%253C%252Fscript%253E"
+            style="width: 920px; height: 266px; border:0; transform: scale(1); overflow:hidden;"
+            sandbox="allow-scripts allow-same-origin">
+        </iframe>
+    </div>
+    <p>Chart.js를 쓰고 싶으면 <a href="https://www.chartjs.org/docs/latest/getting-started/installation.html">설치 홈페이지</a>로
+        들어가면 설치할 수 있습니다. 설치 후에는 CDN을 복사하여 head태그에 입력합니다.</p>
+        <hr class="divideLine">
+        <h3>2. 차트라이브러리 코드 입력하기</h3>
+        <h4>1)외부 자바스크립트 파일로 넣기</h4>
+        <p>script태그의 src속성으로 자바스크립트 파일을 넣으려고 할때 주의✨<br>body태그안에서 코드를 다 입력한 마지막에 넣어준다.</p>
+        <h4>2)기본 차트 코드 입력</h4>
+        <div class="textIframe">
+            <iframe
+            src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=14px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=%253Cbody%253E%250A%2509%253Cdiv%2520class%253D%2522chartArea%2522%253E%250A%2520%2520%2520%2520%2509%253Ccanvas%2520id%253D%2522myChart%2522%253E%253C%252Fcanvas%253E%250A%2520%2520%2520%2520%253C%252Fdiv%253E%250A%253C%252Fbody%253E"
+            style="width: 500px; height: 220px; border:0; transform: scale(1); overflow:hidden;"
+            sandbox="allow-scripts allow-same-origin">
+        </iframe>
+        <p>canvas 태그는 src와 alt 속성이 없다는 점만 제외하면 마치 img 요소 처럼 보입니다. 하지만 닫는 태그가 필수 입니다.</p>
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C1%29&t=one-light&wt=none&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=1px&ph=32px&ln=false&fl=1&fm=Hack&fs=14px&lh=143%25&si=false&es=2x&wm=false&code=Chart.defaults.font.family%2520%253D%2520%27KOTRA_BOLD-Bold%27%253B%250Avar%2520context%2520%253D%2520document%250A%2520%2520%2520%2520.getElementById%28%27myChart%27%29%250A%2520%2520%2520%2520.getContext%28%272d%27%29%253B%250Avar%2520myChart%2520%253D%2520new%2520Chart%28context%252C%2520%257B%250A%2520%2520%2520%2520type%253A%2520%27bar%27%252C%2520%252F%252F%2520%25EC%25B0%25A8%25ED%258A%25B8%25EC%259D%2598%2520%25ED%2598%2595%25ED%2583%259C%250A%2520%2520%2520%2520data%253A%2520%257B%2520%252F%252F%2520%25EC%25B0%25A8%25ED%258A%25B8%25EC%2597%2590%2520%25EB%2593%25A4%25EC%2596%25B4%25EA%25B0%2588%2520%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%250A%2520%2520%2520%2520%2520%2520%2520%2520labels%253A%2520%255B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%252F%252Fx%2520%25EC%25B6%2595%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%271%27%252C%2520%272%27%252C%2520%273%27%252C%2520%274%27%252C%2520%275%27%252C%2520%276%27%252C%2520%277%27%250A%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520datasets%253A%2520%255B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%2520%252F%252F%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520label%253A%2520%27%25ED%2583%2580%25EC%259E%2585A%27%252C%2520%252F%252F%25EC%25B0%25A8%25ED%258A%25B8%2520%25EC%25A0%259C%25EB%25AA%25A9%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520fill%253A%2520false%252C%2520%252F%252F%2520line%2520%25ED%2598%2595%25ED%2583%259C%25EC%259D%25BC%2520%25EB%2595%258C%252C%2520%25EC%2584%25A0%2520%25EC%2595%2588%25EC%25AA%25BD%25EC%259D%2584%2520%25EC%25B1%2584%25EC%259A%25B0%25EB%258A%2594%25EC%25A7%2580%2520%25EC%2595%2588%25EC%25B1%2584%25EC%259A%25B0%25EB%258A%2594%25EC%25A7%2580%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520data%253A%2520%255B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%252F%252Fx%25EC%25B6%2595%2520label%25EC%2597%2590%2520%25EB%258C%2580%25EC%259D%2591%25EB%2590%2598%25EB%258A%2594%2520%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%2520%25EA%25B0%2592%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520backgroundColor%253A%2520%255B%2520%27rgba%28255%252C%252099%252C%2520132%252C%25200.2%29%27%252F%252F%25EC%2583%2589%25EC%2583%2581%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520borderColor%253A%2520%255B%2520%27rgba%28255%252C%252099%252C%2520132%252C%25201%29%27%252F%252F%25EA%25B2%25BD%25EA%25B3%2584%25EC%2584%25A0%2520%25EC%2583%2589%25EC%2583%2581%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520borderWidth%253A%25200%2520%252F%252F%25EA%25B2%25BD%25EA%25B3%2584%25EC%2584%25A0%2520%25EA%25B5%25B5%25EA%25B8%25B0%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520label%253A%2520%27%25ED%2583%2580%25EC%259E%2585B%27%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520fill%253A%2520false%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520data%253A%2520%255B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2509%2509%2509Math.floor%28Math.random%28%29*50%29%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520backgroundColor%253A%2520%27rgba%2854%252C%2520162%252C%2520235%252C%25200.2%29%27%252C%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520borderColor%253A%2520%27rgb%28157%252C%2520109%252C%252012%29%27%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%255D%250A%2520%2520%2520%2520%257D%252C%250A%2520%2520%2520%2520options%253A%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520scales%253A%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520yAxes%253A%2520%255B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520ticks%253A%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520beginAtZero%253A%2520true%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%255D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D%29%253B"
+        style="width: 730px; height: 1300px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+    </iframe>
+</div> -->
+</div>
+<div class="chartArea">
+    <canvas id="myChart2"></canvas>
+</div>
+<script src="chartFunction.js"></script>
+</body>
+
+</html>
+
+
